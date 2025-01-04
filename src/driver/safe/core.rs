@@ -307,6 +307,10 @@ pub struct CudaFunction {
 }
 
 impl CudaFunction {
+    pub fn cu_function(&self) -> sys::CUfunction {
+        self.cu_function
+    }
+    
     pub fn occupancy_available_dynamic_smem_per_block(
         &self,
         num_blocks: u32,
